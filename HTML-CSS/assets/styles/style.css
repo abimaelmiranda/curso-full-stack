@@ -1,0 +1,115 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;700&family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap'); 
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    --white-color: #ffff;
+    --primary-color: #0A1128;
+    --gap: 3rem;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1{
+    font-size: 6rem;
+    text-transform: uppercase;
+}
+h2{
+    font-size: 5.5rem;
+    text-transform: uppercase;
+}
+h3{
+    font-size: 5rem;
+    text-transform: uppercase;
+}
+h4{
+    font-size: 4.5rem;
+    text-transform: uppercase;
+}
+h5{
+    font-size: 4rem;
+    text-transform: uppercase;
+}
+h6{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white-color);
+    width: 100%;
+    padding: 30px;
+}
+
+header > h1 {
+    font-size: 2rem;
+    font-style: normal;
+}
+
+h1 > a{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.menu a{
+    display: block;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+.menu{
+    display: flex;
+    column-gap: 50px;
+}
+
+
+.main-bg{
+    background-image: url(../img/main-bg.svg);
+    background-size: cover;
+    background-position: center ;
+    color: var(--white-color);
+}
+
+.main-content{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--gap);
+
+}
+
+.white-bg{
+    background-color: var(--white-color);
+    background-size: cover;
+    background-position: center ;
+    color: var(--white-color);
+}
+
+.section{
+    min-height: 100vh;
+}
