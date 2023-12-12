@@ -11,6 +11,8 @@
     --white-color: #ffff;
     --primary-color: #0A1128;
     --gap: 3rem;
+
+    --light-gray-color: lightgray;
 }
 
 html{
@@ -64,11 +66,16 @@ header{
     background: var(--white-color);
     width: 100%;
     padding: 30px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.712);
 }
 
 header > h1 {
     font-size: 2rem;
     font-style: normal;
+}
+
+.menu-spacing{
+    height: 85px;
 }
 
 h1 > a{
@@ -77,15 +84,64 @@ h1 > a{
 }
 
 .menu a{
+    position: relative;
     display: block;
     text-decoration: none;
     color: var(--primary-color);
     font-size: 1.8rem;
 }
 
-.menu{
+.menu ul li a::after{
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    height: 2px;
+    width: 0;
+    background: blue;
+    transition: all 300ms ease-in-out;
+}
+
+.menu a:hover::after{
+    width: 50%;
+    left: 25%;
+}
+
+.menu > ul{
     display: flex;
     column-gap: 50px;
+    list-style: none;
+}
+
+#intro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    padding: 20px;
+}
+
+#intro h2{
+    font-size: 5rem;
+}
+
+
+.img-container{
+    height: 500px;
+    width: 500px;
+}
+
+.intro-text-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 35px;
+    width: 425px;
+}
+
+.intro-text-container > p {
+    line-height: 3.2rem;
+   
 }
 
 
@@ -106,10 +162,233 @@ h1 > a{
 .white-bg{
     background-color: var(--white-color);
     background-size: cover;
-    background-position: center ;
-    color: var(--white-color);
+    background-position: center;
+    text-align: center;
+}
+
+.text-container{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+    max-width: 64rem;
+    margin: auto;
+    padding: 25px;
+}
+
+.text-container > article {
+    display: flex;
+    flex-flow:column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 3rem;
+    width: 100%;
+    height: 100%;
 }
 
 .section{
     min-height: 100vh;
+}
+
+.section > h2 {
+    text-transform: uppercase;
+}
+
+.grid-one-content{
+    display: flex;
+    flex-flow: column wrap;
+    row-gap: 2.5rem;
+    justify-content: center;
+    height: 100svh;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    counter-reset: grid-counter;
+}
+
+.grid-main-heading{
+    margin-bottom: 1rem;
+}
+
+.grid-description{
+    padding-bottom: 5rem;
+}
+
+.grid h3{
+    font-size: 3rem;
+    position: relative;
+    padding-left: 5rem;
+    padding-bottom: 2rem;
+}
+
+.grid h3::before{
+    counter-increment: grid-counter;
+    content: counter(grid-counter);
+    position: absolute;
+    font-size: 8rem;
+    font-style: italic;
+    top: -3rem;
+    left: -2rem;
+    transform: rotate(5deg);
+}
+
+#gallery{
+    padding: 40px;
+    text-align: start;
+}
+#gallery-container{
+    flex-flow: column nowrap;
+}
+
+.gallery-img{
+    width: 100%;
+    max-width: 36rem;
+    max-height: 36rem;
+    overflow: hidden;
+}
+
+.gallery-img > img {
+    transition: all 300ms ease-in-out;
+}
+
+.gallery-img > img:hover {
+    transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
+}
+
+.pricing-text-container{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: var(--gap);
+    min-height: 100svh;
+    max-width: 64rem;
+    margin: auto;
+    padding: 25px;
+}
+
+.table-container{
+    width: 100%;
+    overflow: auto;
+}
+
+table{
+    min-width: 460px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table td, table th{
+    padding: 1rem;
+    text-align: left;
+    border: 0.1rem solid var(--light-gray-color);
+}
+
+table th, tfoot td{
+    text-align: left;
+    background-color: var(--light-gray-color);
+}
+
+table caption{
+    text-align: left;
+    font-style: italic;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+#contact{
+    padding: 15px;
+}
+
+.footer-container{
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: repeat(2, 1fr) ;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+    padding: 20px;
+    width: 70%;
+}
+
+#contact .img-container{
+   width: 100%;
+}
+
+#contact form{
+    align-self: start;
+    grid-column: span 2;
+    display: flex;
+    width: 100%;
+    height: 30rem;
+ }
+
+ form > fieldset {
+    width: 100%;
+    border: none;
+ }
+
+form legend {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+ #contact form #msg, #email{
+    width: 100%;
+ }
+
+#contact .img-container > svg{
+    width: 100%;
+    height: 100%;
+}
+
+fieldset{
+    height:fit-content ;
+}
+
+fieldset > input {
+    margin-bottom: 10px;
+    height: 5rem;
+}
+
+fieldset > textarea {
+    height: 13rem;
+}
+
+fieldset > button {
+    margin-top: 25px;
+    height: 8rem;
+    width: 15rem;
+    background-color: transparent;
+    border: 5px solid var(--white-color);
+    color: var(--white-color);
+}
+
+.form-group{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    column-gap: 30px;
+    margin-bottom: 10px;
+}
+
+.form-group > div{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form-group > div > input{
+    width: 100% ;
+    height: 5rem;
+}
+
+.block{
+    display: block;
 }
