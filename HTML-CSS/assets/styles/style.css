@@ -189,6 +189,7 @@ h1 > a{
 
 .section{
     min-height: 100vh;
+    
 }
 
 .section > h2 {
@@ -200,7 +201,7 @@ h1 > a{
     flex-flow: column wrap;
     row-gap: 2.5rem;
     justify-content: center;
-    height: 100svh;
+    min-height: 100svh;
 }
 
 .grid{
@@ -338,7 +339,7 @@ form legend {
     margin-bottom: 10px;
 }
 
- #contact form #msg, #email{
+ #contact form #msg, #email{  
     width: 100%;
  }
 
@@ -369,6 +370,12 @@ fieldset > button {
     color: var(--white-color);
 }
 
+fieldset > button:hover {
+    background-color: var(--light-gray-color);
+    color: var(--primary-color);
+    cursor:pointer;
+}
+
 .form-group{
     display: flex;
     flex-flow: row nowrap;
@@ -384,6 +391,11 @@ fieldset > button {
     width: 100%;
 }
 
+fieldset input, textarea{
+    text-indent: 0.8rem;
+}
+
+
 .form-group > div > input{
     width: 100% ;
     height: 5rem;
@@ -391,4 +403,144 @@ fieldset > button {
 
 .block{
     display: block;
+}
+
+.close-menu{
+    display: none;
+}
+
+.anchor{
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--light-gray-color);
+    width: 50px;
+    height: 50px;
+    border-radius:50%;
+    padding-top:6px;
+    text-align: center;
+    border: 1px solid var(--primary-color);
+}
+
+@media (max-width: 800px) {
+
+    p{
+        font-size: 1.6rem;
+    }
+
+    .menu-spacing{
+        display: none;
+    }
+
+    #top3Jobs > .grid-one-content > .grid{
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+
+    .grid-one-content{
+        display: flex;
+        flex-flow: column nowrap;
+        row-gap: 2.5rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    #gallery > .grid-one-content > .grid{
+        grid-template-columns: 1fr;
+    }
+
+    #gallery > .grid-one-content{
+        align-items: center;
+    }
+
+
+    #recent-jobs .grid{
+        grid-template-columns: 1fr;
+    }
+
+    .grid h3::before{
+        display: none;
+    }
+
+    .grid h3{
+        padding-left: 0rem;
+    }
+
+    header{
+        flex-direction: column;
+        bottom: 0;
+        justify-content: center;
+        row-gap: var(--gap);
+        display: none;
+    }
+
+
+    .menu ul{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: var(--gap);
+    }
+
+    .close-menu{
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+    }
+    .close-menu-label::after{
+        content: '☰';
+        position: fixed;
+        z-index: 2;
+        top: 2rem;
+        right: 2rem;
+        background: var(--primary-color);
+        color: var(--white-color);
+        font-size: 3rem;
+        line-height: 3rem;
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+
+    .close-menu:checked~header{
+        display: flex;
+    }
+
+    .close-menu:checked~.close-menu-label::after{
+        display: block;
+        content: '×';
+    }
+    
+    footer{
+        height: auto;
+    }
+
+    .footer-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        height: 100%;
+    }
+
+    .img-container{
+        height: 100%;
+        grid-row: 2;
+    }
+
+    #contact form{
+        flex-direction: column;
+        height: 550px;
+    }
+
+    fieldset, .form-group{
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+
 }

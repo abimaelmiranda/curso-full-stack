@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="assets/styles/style.css">
 </head>
 <body>
+    <input type="checkbox" role="button" aria-label="Close Menu" id="close-menu" class="close-menu">
+    <label for="close-menu" title="close menu" class="close-menu-label"></label>
     <header>
-        <h1><a href="#">Logo</a></h1>
+        <h1 onclick="getElementById('close-menu').checked = false"><a href="#">Logo</a></h1>
         <nav class="menu">
-            <ul>
-                <li><a href="#intro">Intro</a></li>
+            <ul onclick="getElementById('close-menu').checked = false">
+                <li><a href="#">Intro</a></li>
                 <li><a href="#top3">Top 3</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#">Work</a></li>
@@ -460,20 +462,20 @@
                     <div class="form-group">
                         <div>
                             <label for="first-name">First Name</label>
-                            <input id="first-name" name="first-name" type="text">
+                            <input id="first-name" name="first-name" type="text" placeholder="Insira seu primeiro nome">
                         </div>
 
                         <div>
                             <label for="last-name">Last Name</label>
-                            <input id="last-name" name="last-name" type="text">
+                            <input id="last-name" name="last-name" type="text" placeholder="Insira seu segundo nome">
                         </div>
                     </div>
 
                         <label for="email"class="block">Email</label>
-                        <input id="email" name="email" type="email" class="block">
+                        <input id="email" name="email" type="email" class="block" placeholder="Insira seu email">
 
                         <label for="msg" class="block">Your Message</label>
-                        <textarea id="msg" name="msg" class="block"></textarea>
+                        <textarea id="msg" name="msg" class="block" placeholder="Deixe sua mensagem"></textarea>
 
                         <button type="submit" class="block">Send message</button>
                     
@@ -481,5 +483,7 @@
             </form>
         </div>
     </footer>
+
+    <a href="#" onclick="scrollTo(0,0)" class="anchor">⮝</a>
 </body>
 </html>
